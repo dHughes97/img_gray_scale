@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"image"
 	"image/color"
+	_ "image/jpeg"
 	"image/png"
 	"os"
 )
 
 func Grayscale() {
 	// Open the original image
-	reader, err := os.Open("image.png")
+	reader, err := os.Open("colors.jpg")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
@@ -47,7 +48,7 @@ func Grayscale() {
 	}
 
 	// Save the grayscale image
-	grayFile, err := os.Create("gray_image.png")
+	grayFile, err := os.Create("colors_gray_scale.jpg")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
